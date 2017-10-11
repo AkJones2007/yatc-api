@@ -1,3 +1,7 @@
+CREATE DATABASE yatc;
+
+USE yatc;
+
 # ----------------------------------------
 # USERS
 # ----------------------------------------
@@ -133,6 +137,6 @@ CREATE TABLE high_scores (
 	user_id INT NOT NULL,
 	game_id INT NOT NULL UNIQUE,
 	score SMALLINT NOT NULL,
-	name VARCHAR(50) NOT NULL,	
+	name VARCHAR(50) NOT NULL,
 	PRIMARY KEY (high_score_id)
 );
