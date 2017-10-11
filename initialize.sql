@@ -86,3 +86,41 @@ CREATE TABLE score_cards (
 	yatc_bonus_count TINYINT NOT NULL DEFAULT 0,
 	PRIMARY KEY (score_card_id)
 );
+
+# ----------------------------------------
+# GAMES
+# ----------------------------------------
+CREATE TABLE games (
+	game_id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL UNIQUE,
+	current_roll_id INT NOT NULL UNIQUE,
+	score_card_id INT NOT NULL UNIQUE,
+	turn_count TINYINT NOT NULL DEFAULT 0,
+	is_game_over BOOLEAN NOT NULL DEFAULT false,
+	player_name VARCHAR(50) NOT NULL,
+	PRIMARY KEY (game_id)
+);
+
+delimiter //
+
+CREATE TRIGGER games_insert_trigger
+BEFORE INSERT ON games
+FOR EACH ROW
+BEGIN
+	INSERT INTO current_rolls () VALUES ();
+	SET NEW.current_roll_id=(SELECT current_roll_id FROM current_rolls ORDER BY current_roll_id DESC LIMIT 1);
+	INSERT INTO score_cards () VALUES ();
+	SET NEW.score_card_id=(SELECT score_card_id FROM score_cards ORDER BY score_card_id DESC LIMIT 1);
+END;
+//
+
+CREATE TRIGGER games_delete_trigger
+BEFORE DELETE ON games
+FOR EACH ROW
+BEGIN
+	DELETE FROM current_rolls WHERE current_roll_id=OLD.current_roll_id;
+	DELETE FROM score_cards WHERE score_card_id=OLD.score_card_id;
+END;
+//
+
+delimiter ;
