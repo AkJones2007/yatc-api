@@ -3,3 +3,10 @@ CREATE TABLE users (
 	token CHAR(36) NOT NULL UNIQUE,
 	PRIMARY KEY (user_id)
 );
+
+CREATE TABLE dice (
+	die_id INT NOT NULL AUTO_INCREMENT,
+	value TINYINT NOT NULL DEFAULT 1,
+	is_held BOOLEAN NOT NULL DEFAULT false,
+	PRIMARY KEY (die_id)
+);
