@@ -124,3 +124,15 @@ END;
 //
 
 delimiter ;
+
+# ----------------------------------------
+# HIGH SCORES
+# ----------------------------------------
+CREATE TABLE high_scores (
+	high_score_id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	game_id INT NOT NULL UNIQUE,
+	score SMALLINT NOT NULL,
+	name VARCHAR(50) NOT NULL,	
+	PRIMARY KEY (high_score_id)
+);
