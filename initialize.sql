@@ -64,3 +64,25 @@ END;
 //
 
 delimiter ;
+
+# ----------------------------------------
+# SCORE CARDS
+# ----------------------------------------
+CREATE TABLE score_cards (
+	score_card_id INT NOT NULL AUTO_INCREMENT,
+	aces TINYINT,
+	twos TINYINT,
+	threes TINYINT,
+	fours TINYINT,
+	fives TINYINT,
+	sixes TINYINT,
+	three_of_a_kind TINYINT,
+	four_of_a_kind TINYINT,
+	full_house TINYINT,
+	small_straight TINYINT,
+	large_straight TINYINT,
+	yatc TINYINT,
+	chance TINYINT,
+	yatc_bonus_count TINYINT NOT NULL DEFAULT 0,
+	PRIMARY KEY (score_card_id)
+);
