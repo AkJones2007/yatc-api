@@ -3,6 +3,8 @@ package com.yatc.utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Database {
 
@@ -38,5 +40,18 @@ public class Database {
             System.out.println(e.getMessage());
         }
     }
+
+    // ResultSet query(String sql)
+    public ResultSet query(String sql) {
+        try {
+            Statement statement = connection.createStatement();
+            return statement.executeQuery(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    // void update(String sql)
 
 }
