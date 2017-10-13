@@ -53,5 +53,13 @@ public class Database {
     }
 
     // void update(String sql)
+    public void update(String sql) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
 }
