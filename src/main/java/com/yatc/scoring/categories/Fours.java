@@ -6,9 +6,9 @@ import com.yatc.utils.DiceValueAnalyzer;
 public class Fours extends ScoreCategory {
 
     public int calculateValue(int[] diceValues) {
-        DiceValueAnalyzer diceAnaluyzer = new DiceValueAnalyzer(diceValues);
+        DiceValueAnalyzer diceAnalyzer = new DiceValueAnalyzer(diceValues);
 
-        return diceAnaluyzer.getValueOccuranceCount(4) * 4;
+        return diceAnalyzer.getValueOccuranceCount(4) * 4;
     }
 
 }
