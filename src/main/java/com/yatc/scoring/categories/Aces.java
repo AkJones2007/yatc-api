@@ -1,19 +1,14 @@
 package com.yatc.scoring.categories;
 
 import com.yatc.scoring.ScoreCategory;
+import com.yatc.utils.DiceValueAnalyzer;
 
 public class Aces extends ScoreCategory {
 
     public int calculateValue(int[] diceValues) {
-        int score = 0;
+        DiceValueAnalyzer diceAnalyzer = new DiceValueAnalyzer(diceValues);
 
-        for (int value : diceValues) {
-            if (value == 1) {
-                score += 1;
-            }
-        }
-
-        return score;
+        return diceAnalyzer.getValueOccuranceCount(1);
     }
 
 }
