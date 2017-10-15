@@ -3,12 +3,19 @@ package com.yatc.models;
 public class DieModel {
 
     // FIELDS
+    // id
+    private long id;
     // value
     private int value = 1;
     // isHeld
     private boolean isHeld = false;
 
     // GETTERS
+    // getId()
+    public long getId() {
+        return id;
+    }
+
     // getValue()
     public int getValue() {
         return value;
@@ -20,6 +27,11 @@ public class DieModel {
     }
 
     // SETTERS
+    // setId(long id)
+    public void setId(long id) {
+        this.id = id;
+    }
+
     // setValue()
     public void setValue() {
         if (!isHeld) {
