@@ -176,68 +176,68 @@ public class ScoreCardModel {
     }
 
     // setAces
-    public void setAces(int[] diceValues) {
-        aces.setValue(diceValues);
+    public void setAces(int value) {
+        aces.setValue(value);
     }
 
     // setTwos
-    public void setTwos(int[] diceValues) {
-        twos.setValue(diceValues);
+    public void setTwos(int value) {
+        twos.setValue(value);
     }
 
     // setThrees
-    public void setThrees(int[] diceValues) {
-        threes.setValue(diceValues);
+    public void setThrees(int value) {
+        threes.setValue(value);
     }
 
     // setFours
-    public void setFours(int[] diceValues) {
-        fours.setValue(diceValues);
+    public void setFours(int value) {
+        fours.setValue(value);
     }
 
     // setFives
-    public void setFives(int[] diceValues) {
-        fives.setValue(diceValues);
+    public void setFives(int value) {
+        fives.setValue(value);
     }
 
     // setSixes
-    public void setSixes(int[] diceValues) {
-        sixes.setValue(diceValues);
+    public void setSixes(int value) {
+        sixes.setValue(value);
     }
 
     // setThreeOfAKind
-    public void setThreeOfAKind(int[] diceValues) {
-        threeOfAKind.setValue(diceValues);
+    public void setThreeOfAKind(int value) {
+        threeOfAKind.setValue(value);
     }
 
     // setFourOfAKind
-    public void setFourOfAKind(int[] diceValues) {
-        fourOfAKind.setValue(diceValues);
+    public void setFourOfAKind(int value) {
+        fourOfAKind.setValue(value);
     }
 
     // setFullHouse
-    public void setFullHouse(int[] diceValues) {
-        fullHouse.setValue(diceValues);
+    public void setFullHouse(int value) {
+        fullHouse.setValue(value);
     }
 
     // setSmallStraight
-    public void setSmallStraight(int[] diceValues) {
-        smallStraight.setValue(diceValues);
+    public void setSmallStraight(int value) {
+        smallStraight.setValue(value);
     }
 
     // setLargeStraight
-    public void setLargeStraight(int[] diceValues) {
-        largeStraight.setValue(diceValues);
+    public void setLargeStraight(int value) {
+        largeStraight.setValue(value);
     }
 
     // setYatc
-    public void setYatc(int[] diceValues) {
-        yatc.setValue(diceValues);
+    public void setYatc(int value) {
+        yatc.setValue(value);
     }
 
     // setChance
-    public void setChance(int[] diceValues) {
-        chance.setValue(diceValues);
+    public void setChance(int value) {
+        chance.setValue(value);
     }
 
     // setYatcBonusCount

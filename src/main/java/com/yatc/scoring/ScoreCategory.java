@@ -28,6 +28,14 @@ public abstract class ScoreCategory {
         }
     }
 
+    // void setValue(int value)
+    public void setValue(int value) {
+        if (!hasBeenSet) {
+            this.value = value;
+            hasBeenSet = true;
+        }
+    }
+
     // HELPERS
     // abstract int calculateValue(int[] diceValues)
     public abstract int calculateValue(int[] diceValues);
