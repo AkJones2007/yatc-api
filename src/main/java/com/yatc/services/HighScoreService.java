@@ -63,7 +63,19 @@ public class HighScoreService {
     }
 
     // create(HighScoreModel highScore)
+    public void create(HighScoreModel highScore) {
+        database.update(
+            "INSERT INTO high_scores (user_id, game_id, score, player_name) VALUES (" +
+            highScore.getUserId() + ", " +
+            highScore.getGameId() + ", " +
+            highScore.getScore() + ", '" +
+            highScore.getPlayerName() + "')"
+        );
+    }
 
     // destroy(long id)
+    public void destroy(long id) {
+        database.update("DELETE FROM high_scores WHERE high_score_id=" + id);
+    }
 
 }
