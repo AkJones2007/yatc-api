@@ -98,7 +98,65 @@ public class ScoreCardService {
     }
 
     // update(ScoreCardModel scoreCard)
+    public void update(ScoreCardModel scoreCard) {
+        if (scoreCard.hasAcesBeenSet()) {
+            database.update("UPDATE score_cards SET aces=" + scoreCard.getAces() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasTwosBeenSet()) {
+            database.update("UPDATE score_cards SET twos=" + scoreCard.getTwos() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasThreesBeenSet()) {
+            database.update("UPDATE score_cards SET threes=" + scoreCard.getThrees() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasFoursBeenSet()) {
+            database.update("UPDATE score_cards SET fours=" + scoreCard.getFours() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasFivesBeenSet()) {
+            database.update("UPDATE score_cards SET fives=" + scoreCard.getFives() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasSixesBeenSet()) {
+            database.update("UPDATE score_cards SET sixes=" + scoreCard.getSixes() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasThreeOfAKindBeenSet()) {
+            database.update("UPDATE score_cards SET three_of_a_kind=" + scoreCard.getThreeOfAKind() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasFourOfAKindBeenSet()) {
+            database.update("UPDATE score_cards SET four_of_a_kind=" + scoreCard.getFourOfAKind() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasFullHouseBeenSet()) {
+            database.update("UPDATE score_cards SET full_house=" + scoreCard.getFullHouse() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasSmallStraightBeenSet()) {
+            database.update("UPDATE score_cards SET small_straight=" + scoreCard.getSmallStraight() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasLargeStraightBeenSet()) {
+            database.update("UPDATE score_cards SET large_straight=" + scoreCard.getLargeStraight() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasYatCBeenSet()) {
+            database.update("UPDATE score_cards SET yatc=" + scoreCard.getYatc() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        if (scoreCard.hasChanceBeenSet()) {
+            database.update("UPDATE score_cards SET chance=" + scoreCard.getChance() + " WHERE score_card_id=" + scoreCard.getId());
+        }
+
+        database.update("UPDATE score_cards SET yatc_bonus_count=" + scoreCard.getYatcBonusCount() + " WHERE score_card_id=" + scoreCard.getId());
+    }
 
     // destroy(long id)
+    public void destroy(long id) {
+        database.update("DELETE FROM score_cards WHERE score_card_id=" + id);
+    }
 
 }
