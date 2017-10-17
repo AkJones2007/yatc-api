@@ -11,7 +11,7 @@ public class GameMessenger extends Messenger {
     public String render(GameModel game) throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put("gameId", game.getId());
+        json.put("id", game.getId());
         json.put("turnCount", game.getTurnCount());
         json.put("isGameOver", game.getIsGameOver());
         json.put("playerName", game.getPlayerName());
@@ -24,9 +24,8 @@ public class GameMessenger extends Messenger {
         JSONObject json = new JSONObject(rawJSON);
         GameModel game = new GameModel();
 
-        if (json.has("playerName")) {
-            game.setPlayerName(json.getString("playerName"));
-        }
+        game.setUserId(json.getLong("userId"));
+        game.setPlayerName(json.getString("playerName"));
 
         return game;
     }
