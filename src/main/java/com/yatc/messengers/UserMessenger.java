@@ -11,9 +11,11 @@ public class UserMessenger extends Messenger {
     // render(UserModel user)
     public String render(UserModel user) throws JSONException {
         JSONObject json = new JSONObject();
+        JSONObject userJSON = new JSONObject();
 
-        json.put("id", user.getId());
-        json.put("token", user.getToken());
+        userJSON.put("id", user.getId());
+        userJSON.put("token", user.getToken());
+        json.put("user", userJSON);
 
         return json.toString();
     }
@@ -21,10 +23,11 @@ public class UserMessenger extends Messenger {
     // parse(String rawJSON)
     public UserModel parse(String rawJSON) throws JSONException {
         JSONObject json = new JSONObject(rawJSON);
+        JSONObject userJSON = json.getJSONObject("user");
         UserModel user = new UserModel();
 
-        user.setId(json.getLong("id"));
-        user.setToken(json.getString("token"));
+        user.setId(userJSON.getLong("id"));
+        user.setToken(userJSON.getString("token"));
 
         return user;
     }
